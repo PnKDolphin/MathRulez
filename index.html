@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+  <style>/*Document Colours:
+    Background - #18122B dark blue
+    Surface - #393053 gray
+    Accent - #ED2B2A red
+    Primary - #C147E9 purple
+    Secondary - #06d6a0 teal
+    Accent Shadow = #7a1515 dark red
+*/
+@font-face {
+    font-family: chalk;
+    src: url(chakie.ttf);
+}
+@keyframes pulse {
+    0%{width:7rem;}
+    50%{width:8rem;}
+    100%{width:7rem;}    
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background:#18122B;
+}
+section{
+    height: 100vh;
+    scroll-snap-align: start;
+    z-index: 3;
+}
+h1{
+    color: #06d6a0;
+    font-size: 3rem;
+    z-index: 3;
+    font-family: monospace;
+    backdrop-filter: blur(10px);
+    position:relative;
+    float:left;
+    backdrop-filter:blur(10px);
+
+}
+#two{
+    margin-top:100vh;
+}
+#monoTitle{
+    margin-top:50vh;
+    margin-left:50vw;
+    transform:translate(-50%, -50%);
+}
+#two h2{
+    font-family:monospace;
+    color: #06d6a0;
+    float:left;
+    position:relative;
+    font-size: 2rem;
+}
+#monoSub{
+    margin-top:-95vh;
+    margin-left:75vw;
+    transform:translate(-50%, -50%);
+}
+#monoAdd{
+    margin-top:-95vh;
+    margin-left:25vw;
+    transform:translate(-50%, -50%);
+}
+.text-background{
+  background: #393053;
+}
+#monoSubRep{
+  height:4rem;
+  width:20rem;
+  margin-top: -87vh;
+  margin-left: 25vw;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+}
+#two h3{
+  float:left;
+  position: relative;
+  margin-left: 25vw;
+  margin-top: -87vh;
+  color: #CFD8DC;
+  transform: translate(-50%, -50%);
+  font-family: cursive;
+}
+.vl{
+    height:100vh;
+    margin-left:50vw;
+    margin-top: -52vh;
+    border-left: 6px dotted #393053;
+    position:relative;
+
+}
+
+#title{
+    margin:0;
+    width:100vw;
+    height:100vh;
+}
+#one h4{
+    font-family: monospace;
+    color: #CFD8DC;
+    text-align: center;
+    font-size: 1rem;
+    position:relative;
+    top:-40vh;
+    
+}
+#scroll{
+    margin-top:-1.5rem;
+    width:7rem;
+    z-index: 5;
+    position: relative;
+    margin-left:50vw;
+    transform:translate(-50%,-50%);
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.scrollbackground{
+    width:7rem;
+    filter:blur(10px);
+    height:6rem;
+    background: #18122B;
+    position:relative;
+    margin-left:50vw;
+    margin-top:-18rem;
+    z-index: 4;
+    transform:translate(-50%, -50%)
+}
+#one h5{
+    font-family: monospace;
+    color: #676372;
+    margin-top:-6rem;
+    position:relative;
+    z-index: 2;
+}
+
+.container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    z-index: 2;
+}
+#blur-wrapper{
+    position:absolute;
+    height: 30vh;
+    width: 100vw;
+
+    top:100vh;
+    left:50vw;
+    transform:translate(-50%,-50%);
+    background:#18122B;
+    filter:blur(50px);
+    z-index:1;
+}
+#blur{
+    width:100vw;
+    height:10rem;
+    background: #18122B;
+    position:relative;
+    top:-12vh;
+    filter:blur(50px);
+}
+
+
+
+
+
+
+
+
+#menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    height: 2px;
+    background-color: #06d6a0;
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 20rem;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    transition-duration: .25s;
+  }
+  .menu__item {
+    display: block;
+    padding: 1em 1em;
+    color: #C147E9;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu__item:hover {
+    color: #CFD8DC;
+  }</style>
+</head>
+<body>
+    <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+        <span></span>
+        </label>
+
+        <ul class="menu__box">
+            <li><a class="menu__item" href="#one">Title</a></li>
+            <li><a class="menu__item" href="#two">Monomials</a></li>
+            <li><a class="menu__item" href="#three">Product Rule</a></li>
+            <li><a class="menu__item" href="#four">Quotient Rule</a></li>
+            <li><a class="menu__item" href="#five">Power Rule</a></li>
+            <li><a class="menu__item" href="#six">Power of Zero Rule</a></li>
+            <li><a class="menu__item" href="#seven">Negative Exponents Rule</a></li>
+            <li><a class="menu__item" href="#eight">Credits</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <section id="one">
+            <img src="/Assets/Title.png" alt="title" id="title">
+            <h4>And Their Math Rules</h4>
+            <h5>Design and Fundemental Programmer - Saul Slowinski. <br>
+                Assistant Programmer and Asset Technician - Jaxxon Einarson. <br>
+                Product and Power Rules - Ethan Coutts. <br>
+                Negative Exponent and Quotient Rules + Resident Snack Man - Jesse Soucy.
+            </h5>
+            <img src="/Assets/Scroll.png" alt="scroll-down" id="scroll">
+            <div id="blur"></div> 
+            <div class="scrollbackground"></div>
+        </section>
+
+        <section id="two">
+            <h1 id="monoTitle">Monomials</h1>
+            <div class="vl"></div>
+            <h2 id="monoAdd">Adding</h1>
+            <h2 id="monoSub">Subtracting</h1>
+            <div class="text-background" id="monoSubRep"></div>
+            <h3>How Are you Doing?</h3>
+        </section>
+
+        <section id="three">
+            <h1>The Product Rule</h1>
+        </section>
+
+        <section id="four">
+            <h1>The Quotient Rule</h1>
+        </section>
+
+        <section id="five">
+            <h1>The Power Rule</h1>
+        </section>
+
+        <section id="six">
+            <h1>The Power of Zero Rule</h1>
+        </section>
+
+        <section id="seven">
+            <h1>The Negative Exponent Rule</h1>
+        </section>
+
+        <section id="eight">
+            <h1>Credits</h1>
+        </section>
+
+    </div>
+</body>
+</html>
